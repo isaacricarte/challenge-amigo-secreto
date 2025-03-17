@@ -1,7 +1,7 @@
 let listaDeAmigos = [];
 
-amigo.addEventListener('keydown', function(press) {
-  if (press.key === 'Enter') {
+amigo.addEventListener("keydown", function (press) {
+  if (press.key === "Enter") {
     adicionarAmigo();
   }
 });
@@ -23,7 +23,6 @@ function adicionarAmigo() {
       document.querySelector("#botaoDeRecomecarSorteio").removeAttribute("disabled");
     }
     limparCampo();
-    // console.log(listaDeAmigos);
   }
 }
 
@@ -34,9 +33,8 @@ function limparCampo() {
 
 function sortearAmigo() {
   numeroAleatorio = parseInt(Math.random() * listaDeAmigos.length);
-  // console.log(listaDeAmigos[numeroAleatorio]);
   let listaResultado = document.getElementById("resultado");
-  listaResultado.innerHTML = listaDeAmigos[numeroAleatorio];
+  listaResultado.innerHTML = `Seu amigo secreto é: ${listaDeAmigos[numeroAleatorio]}!`;
 }
 
 function recomecarSorteio() {
@@ -44,6 +42,8 @@ function recomecarSorteio() {
   limparCampo();
   let listaAmigos = document.getElementById("listaAmigos");
   listaAmigos.innerHTML = "";
+  let listaResultado = document.getElementById("resultado");
+  listaResultado.innerHTML = "";
   document.querySelector("#botaoDeSortear").setAttribute("disabled", true);
   document.querySelector("#botaoDeRecomecarSorteio").setAttribute("disabled", true);
 }
